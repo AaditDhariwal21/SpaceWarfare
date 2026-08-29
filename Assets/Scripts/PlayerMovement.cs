@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
-
         playerInput.SwitchCurrentControlScheme(playerInput.defaultControlScheme,Keyboard.current);
     }
     public void OnMove(InputValue value)
