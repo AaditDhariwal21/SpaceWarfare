@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 175f661da4c5caa4b83aa7e59ffbea71, type: 3}
+  m_Name: BlueShipData
+  m_EditorClassIdentifier: Assembly-CSharp::ShipData
+  shipName: Blue
+  sprite: {fileID: -354191649082998739, guid: deaa11dbd03f92b44b8b4eff39044413, type: 3}
+  laserPrefab: {fileID: 0}
+  missilePrefab: {fileID: 0}
