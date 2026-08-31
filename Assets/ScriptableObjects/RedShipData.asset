@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShipData
   shipName: Red
   sprite: {fileID: -590947418329346848, guid: d2dd31e694b45a2499f598a6bd7fdb8d, type: 3}
-  laserPrefab: {fileID: 0}
+  laserPrefab: {fileID: 2792166494850708381, guid: 0f3597e2816611d418237614d018ced3, type: 3}
   missilePrefab: {fileID: 0}
