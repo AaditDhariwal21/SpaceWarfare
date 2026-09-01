@@ -1,16 +1,38 @@
+using System;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private float maxHealth = 150f;
+    private float currentHealth;
+    private bool isAlive;
+
+    void Awake()
+    {
+        isAlive = true;
+        currentHealth = maxHealth;
+    }
     void Start()
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        if (isAlive && currentHealth <= 0)
+    {
+        isAlive = false;
+        Debug.Log("Game Over");
+    }
+    }
+
+    public void TakeDamage(int dmg)
+    {
+        if ((!isAlive) || currentHealth <=0 ) return ;
+        currentHealth = Math.Max(currentHealth - dmg , 0);
+    }
+
+    public float getCurrentHealth()
+    {
+        return currentHealth;
     }
 }

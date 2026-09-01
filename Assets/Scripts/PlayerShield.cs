@@ -4,8 +4,20 @@ using UnityEngine.InputSystem;
 public class PlayerShield : MonoBehaviour
 {
 
+    private bool isActive;
+
+    void Awake()
+    {
+        isActive = false;
+    }
+
     void OnShield(InputValue input)
     {
-        Debug.Log("Shield Active");
+        isActive = input.isPressed;
+    }
+
+    public bool isShieldActive()
+    {
+        return isActive;    
     }
 }
