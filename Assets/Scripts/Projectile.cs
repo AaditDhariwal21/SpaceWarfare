@@ -1,40 +1,46 @@
-using UnityEngine;
+    using UnityEngine;
 
-public class Projectile : MonoBehaviour
-{
-    public float speed = 10f;
-    public float lifetime = 5f;
-    public int damage = 5;
-
-    Rigidbody2D rb;
-    Vector2 direction;
-
-    void Awake()
+    public class Projectile : MonoBehaviour
     {
-        rb = GetComponent<Rigidbody2D>();
-    }
+        public float speed = 10f;
+        public float lifetime = 5f;
+        public int damage = 5;
 
-    public void Launch(Vector2 fireDirection)
-    {
-        direction = fireDirection.normalized;
-        rb.linearVelocity = direction * speed;
-        Destroy(gameObject, lifetime);
-    }
+        public PlayerStateMachine stateMachine;
 
-     void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Player"))
+        Rigidbody2D rb;
+        Vector2 direction;
+
+        void Awake()
         {
-            GameObject player = collision.collider.gameObject;
+            rb = GetComponent<Rigidbody2D>();
+        }
 
-            if (player.GetComponent<PlayerShield>().isShieldActive())
+        public void Launch(Vector2 fireDirection)
+        {
+            direction = fireDirection.normalized;
+            rb.linearVelocity = direction * speed;
+            Destroy(gameObject, lifetime);
+        }
+
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.collider.CompareTag("Player"))
             {
-                player.GetComponent<PlayerFocus>().AddFocus(damage);
+                collision.collider.GetComponent<PlayerHealth>().TakeDamage(damage);
             }
-            else
+            else if (collision.collider.CompareTag("Shield"))
             {
-                player.GetComponent<PlayerHealth>().TakeDamage(damage);
-            }  
-        }      
+                var stateMachine = collision.collider.GetComponentInParent<PlayerStateMachine>();
+
+                if (stateMachine.currentState == PlayerActionState.ShieldRaise)
+                {
+                    collision.collider.GetComponentInParent<PlayerHealth>().TakeDamage(damage);
+                }
+                else if (stateMachine.currentState == PlayerActionState.Shielding)
+                {
+                    collision.collider.GetComponentInParent<PlayerFocus>().AddFocus(damage);
+                }
+            }
+        }
     }
-}

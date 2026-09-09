@@ -19,7 +19,7 @@ public class PlayerFocus : MonoBehaviour
     }    
     void Update()
     {
-        
+        currentFocus = Math.Min(maxFocus, currentFocus + (focusGenPerSecond * Time.deltaTime));
     }
     public float getCurrentFocus()
     {

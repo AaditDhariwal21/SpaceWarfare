@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,24 +7,73 @@ public class PlayerWeapon : MonoBehaviour
     public Transform firePoint;
     public ShipData shipData;
 
+    [Header("Ammo Config")]
+    public int laserMaxAmmo = 15;
+    public int missileMaxAmmo = 5;
+    public float laserReloadTime = 3f;
+    public float missileReloadTime = 5f;
+
+    public PlayerStateMachine stateMachine;
+
+    int laserAmmo;
+    int missileAmmo;
+    bool laserReloading;
+    bool missileReloading;
+
+    void Awake()
+    {
+        laserAmmo = laserMaxAmmo;
+        missileAmmo = missileMaxAmmo;
+
+        laserReloading = false;
+        missileReloading = false;
+    }
 
     public void OnShootLasers(InputValue input)
     {
         if(!input.isPressed) return;
+        if (stateMachine.currentState != PlayerActionState.Neutral) return;
+        if (laserReloading || laserAmmo <= 0) return;
+
+    
         Fire(shipData.laserPrefab);
+        laserAmmo--;
+        if(laserAmmo <= 0 ) StartCoroutine(LaserReload());
     }
 
     public void OnShootMissiles(InputValue input)
     {
-        if (!input.isPressed) return;
+        if(!input.isPressed) return;
+        if (stateMachine.currentState != PlayerActionState.Neutral) return;
+        if (missileReloading || missileAmmo <= 0) return;
+
         Fire(shipData.missilePrefab);
+        missileAmmo--;
+        if(missileAmmo <= 0) StartCoroutine(MissileReload());
     }
 
-     void Fire(GameObject prefab)
+    void Fire(GameObject prefab)
     {
         if (prefab == null || firePoint == null) return;
 
         var proj = Instantiate(prefab, firePoint.position, firePoint.rotation);
         proj.GetComponent<Projectile>().Launch(firePoint.up);
     }
+
+    IEnumerator LaserReload()
+    {
+        laserReloading = true;
+        yield return new WaitForSeconds(laserReloadTime);
+        laserAmmo = laserMaxAmmo;
+        laserReloading = false;
+    }
+
+    IEnumerator MissileReload()
+    {
+        missileReloading = true;
+        yield return new WaitForSeconds(missileReloadTime);
+        missileAmmo = missileMaxAmmo;
+        missileReloading = false;
+    }
+
 }
