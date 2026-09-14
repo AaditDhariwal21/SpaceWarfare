@@ -4,7 +4,9 @@ using UnityEngine;
 public class ShipData : ScriptableObject
 {
     public string shipName;
-    public Sprite sprite;
-    public GameObject laserPrefab;
-    public GameObject missilePrefab;
+    public Sprite playerSprite;
+    public Sprite laserSprite;
+    public Sprite missileSprite;
+    public Sprite healthBarBorder;
+    public Color fillColor;
 }

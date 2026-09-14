@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3557774502122056783}
   - component: {fileID: 5423100538216255958}
   m_Layer: 0
-  m_Name: RedMissile
+  m_Name: Missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,5 +171,5 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.18, y: 0.4}
+  m_Size: {x: 0.13, y: 0.38}
   m_Direction: 0

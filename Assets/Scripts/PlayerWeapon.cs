@@ -7,6 +7,9 @@ public class PlayerWeapon : MonoBehaviour
     public Transform firePoint;
     public ShipData shipData;
 
+    public GameObject laserPrefab;
+    public GameObject missilePrefab;
+
     [Header("Ammo Config")]
     public int laserMaxAmmo = 15;
     public int missileMaxAmmo = 5;
@@ -36,7 +39,7 @@ public class PlayerWeapon : MonoBehaviour
         if (laserReloading || laserAmmo <= 0) return;
 
     
-        Fire(shipData.laserPrefab);
+        Fire(laserPrefab, shipData.laserSprite);
         laserAmmo--;
         if(laserAmmo <= 0 ) StartCoroutine(LaserReload());
     }
@@ -47,16 +50,17 @@ public class PlayerWeapon : MonoBehaviour
         if (stateMachine.currentState != PlayerActionState.Neutral) return;
         if (missileReloading || missileAmmo <= 0) return;
 
-        Fire(shipData.missilePrefab);
+        Fire(missilePrefab, shipData.missileSprite);
         missileAmmo--;
         if(missileAmmo <= 0) StartCoroutine(MissileReload());
     }
 
-    void Fire(GameObject prefab)
+    void Fire(GameObject prefab, Sprite sprite)
     {
         if (prefab == null || firePoint == null) return;
 
         var proj = Instantiate(prefab, firePoint.position, firePoint.rotation);
+        proj.GetComponent<SpriteRenderer>().sprite=sprite;
         proj.GetComponent<Projectile>().Launch(firePoint.up);
     }
 

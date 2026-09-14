@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 3504920162415975694}
   - component: {fileID: 8965647111081117158}
   - component: {fileID: 4692687455014419408}
+  - component: {fileID: 3574105938860884249}
   - component: {fileID: 3553035754602238203}
   m_Layer: 0
   m_Name: Player
@@ -187,6 +188,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerWeapon
   firePoint: {fileID: 5422665953409843119}
   shipData: {fileID: 11400000, guid: 0e550de801f59574f92c5fd631b0243a, type: 2}
+  laserPrefab: {fileID: 2792166494850708381, guid: 0f3597e2816611d418237614d018ced3, type: 3}
+  missilePrefab: {fileID: 276187435809193950, guid: 128ee804c95923b4b9a3b825604f3ccc, type: 3}
+  laserMaxAmmo: 15
+  missileMaxAmmo: 5
+  laserReloadTime: 3
+  missileReloadTime: 5
+  stateMachine: {fileID: 3574105938860884249}
 --- !u!114 &3504920162415975694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb7a645b4e6ec841a0b054455d49c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerShield
-  shield: {fileID: 6756872892927876733, guid: e3590e02dafe5d54cb2dc6e40e300c0d, type: 3}
+  stateMachine: {fileID: 0}
+  raiseDuration: 0.25
 --- !u!114 &4692687455014419408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +233,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79a51d351ca347b419f361fbd030835a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerFocus
+--- !u!114 &3574105938860884249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6316358217780995276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590b29707f23c8d4dab8131eaa402c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStateMachine
+  currentState: 0
 --- !u!60 &3553035754602238203
 PolygonCollider2D:
   m_ObjectHideFlags: 0

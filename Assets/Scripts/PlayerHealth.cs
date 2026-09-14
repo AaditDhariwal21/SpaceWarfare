@@ -4,8 +4,10 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     private float maxHealth = 150f;
+    public float MaxHealth => maxHealth; 
     private float currentHealth;
     private bool isAlive;
+    public event Action<float, float> OnHealthChanged;
 
     void Awake()
     {
@@ -29,8 +31,9 @@ public class PlayerHealth : MonoBehaviour
     {
         if ((!isAlive) || currentHealth <=0 ) return ;
         currentHealth = Math.Max(currentHealth - dmg , 0);
-    }
 
+        OnHealthChanged?.Invoke(currentHealth,maxHealth);
+    }
     public float getCurrentHealth()
     {
         return currentHealth;

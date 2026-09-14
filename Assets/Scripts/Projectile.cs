@@ -6,8 +6,6 @@
         public float lifetime = 5f;
         public int damage = 5;
 
-        public PlayerStateMachine stateMachine;
-
         Rigidbody2D rb;
         Vector2 direction;
 
@@ -42,5 +40,6 @@
                     collision.collider.GetComponentInParent<PlayerFocus>().AddFocus(damage);
                 }
             }
+            Destroy(gameObject);
         }
     }
