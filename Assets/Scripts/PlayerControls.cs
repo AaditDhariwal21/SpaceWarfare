@@ -100,6 +100,51 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ShootLasers"",
+                    ""type"": ""Button"",
+                    ""id"": ""6e9e6418-aece-4158-95bb-51c4f1422fd0"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ShootMissiles"",
+                    ""type"": ""Button"",
+                    ""id"": ""9f6bc92c-9286-4f65-8fb4-8bd9acf8a455"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ShieldPressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""0da7abf8-32cb-42d1-8045-8f38cf8f2c49"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ShieldReleased"",
+                    ""type"": ""Button"",
+                    ""id"": ""0ee9e8e2-c637-40ac-a7e6-2e9c13a92b85"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Special"",
+                    ""type"": ""Button"",
+                    ""id"": ""0458f077-6bb7-4d93-bf58-e89912a35ae9"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -150,7 +195,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""positive"",
                     ""id"": ""8f2a35be-a6f1-4a00-b70f-5dda70cc9ad8"",
-                    ""path"": ""<Keyboard>/upArrow"",
+                    ""path"": ""<Keyboard>/i"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";KeyboardP2"",
@@ -161,13 +206,123 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""negative"",
                     ""id"": ""eded7afd-57e5-4594-925f-1af1f8032f9c"",
-                    ""path"": ""<Keyboard>/downArrow"",
+                    ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";KeyboardP2"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""61552b96-4262-440e-934f-5e637dce259a"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";KeyboardP1"",
+                    ""action"": ""ShootLasers"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""71521f07-ffee-4313-aa8b-f48041c510cb"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";KeyboardP2"",
+                    ""action"": ""ShootLasers"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""720faf26-b227-462a-a260-946fa064de8c"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";KeyboardP1"",
+                    ""action"": ""ShootMissiles"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e13a1580-7352-4429-b9c5-c7b5fdf84b91"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";KeyboardP2"",
+                    ""action"": ""ShootMissiles"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d5ea396f-546a-4c60-981f-1974102de08c"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": "";KeyboardP1"",
+                    ""action"": ""ShieldPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bc4971f6-bdcd-43d0-bfe0-c8695555687a"",
+                    ""path"": ""<Keyboard>/semicolon"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": "";KeyboardP2"",
+                    ""action"": ""ShieldPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""39c49e23-c4ad-4a2c-87f3-3ca802eece1e"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";KeyboardP1"",
+                    ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f3abd0a0-cfa1-41db-ace5-3b34f0fb6df5"",
+                    ""path"": ""<Keyboard>/u"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";KeyboardP2"",
+                    ""action"": ""Special"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bbeaea61-3028-4403-84f4-b62295c12637"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": "";KeyboardP1"",
+                    ""action"": ""ShieldReleased"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4ffdfc69-51fc-4e7c-84f8-37d9dc026dbb"",
+                    ""path"": ""<Keyboard>/semicolon"",
+                    ""interactions"": ""Press(behavior=1)"",
+                    ""processors"": """",
+                    ""groups"": "";KeyboardP2"",
+                    ""action"": ""ShieldReleased"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -188,6 +343,11 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
+        m_Gameplay_ShootLasers = m_Gameplay.FindAction("ShootLasers", throwIfNotFound: true);
+        m_Gameplay_ShootMissiles = m_Gameplay.FindAction("ShootMissiles", throwIfNotFound: true);
+        m_Gameplay_ShieldPressed = m_Gameplay.FindAction("ShieldPressed", throwIfNotFound: true);
+        m_Gameplay_ShieldReleased = m_Gameplay.FindAction("ShieldReleased", throwIfNotFound: true);
+        m_Gameplay_Special = m_Gameplay.FindAction("Special", throwIfNotFound: true);
     }
 
     ~@PlayerControls()
@@ -269,6 +429,11 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Gameplay;
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
     private readonly InputAction m_Gameplay_Move;
+    private readonly InputAction m_Gameplay_ShootLasers;
+    private readonly InputAction m_Gameplay_ShootMissiles;
+    private readonly InputAction m_Gameplay_ShieldPressed;
+    private readonly InputAction m_Gameplay_ShieldReleased;
+    private readonly InputAction m_Gameplay_Special;
     /// <summary>
     /// Provides access to input actions defined in input action map "Gameplay".
     /// </summary>
@@ -284,6 +449,26 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Gameplay/Move".
         /// </summary>
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/ShootLasers".
+        /// </summary>
+        public InputAction @ShootLasers => m_Wrapper.m_Gameplay_ShootLasers;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/ShootMissiles".
+        /// </summary>
+        public InputAction @ShootMissiles => m_Wrapper.m_Gameplay_ShootMissiles;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/ShieldPressed".
+        /// </summary>
+        public InputAction @ShieldPressed => m_Wrapper.m_Gameplay_ShieldPressed;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/ShieldReleased".
+        /// </summary>
+        public InputAction @ShieldReleased => m_Wrapper.m_Gameplay_ShieldReleased;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/Special".
+        /// </summary>
+        public InputAction @Special => m_Wrapper.m_Gameplay_Special;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -313,6 +498,21 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @ShootLasers.started += instance.OnShootLasers;
+            @ShootLasers.performed += instance.OnShootLasers;
+            @ShootLasers.canceled += instance.OnShootLasers;
+            @ShootMissiles.started += instance.OnShootMissiles;
+            @ShootMissiles.performed += instance.OnShootMissiles;
+            @ShootMissiles.canceled += instance.OnShootMissiles;
+            @ShieldPressed.started += instance.OnShieldPressed;
+            @ShieldPressed.performed += instance.OnShieldPressed;
+            @ShieldPressed.canceled += instance.OnShieldPressed;
+            @ShieldReleased.started += instance.OnShieldReleased;
+            @ShieldReleased.performed += instance.OnShieldReleased;
+            @ShieldReleased.canceled += instance.OnShieldReleased;
+            @Special.started += instance.OnSpecial;
+            @Special.performed += instance.OnSpecial;
+            @Special.canceled += instance.OnSpecial;
         }
 
         /// <summary>
@@ -327,6 +527,21 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @ShootLasers.started -= instance.OnShootLasers;
+            @ShootLasers.performed -= instance.OnShootLasers;
+            @ShootLasers.canceled -= instance.OnShootLasers;
+            @ShootMissiles.started -= instance.OnShootMissiles;
+            @ShootMissiles.performed -= instance.OnShootMissiles;
+            @ShootMissiles.canceled -= instance.OnShootMissiles;
+            @ShieldPressed.started -= instance.OnShieldPressed;
+            @ShieldPressed.performed -= instance.OnShieldPressed;
+            @ShieldPressed.canceled -= instance.OnShieldPressed;
+            @ShieldReleased.started -= instance.OnShieldReleased;
+            @ShieldReleased.performed -= instance.OnShieldReleased;
+            @ShieldReleased.canceled -= instance.OnShieldReleased;
+            @Special.started -= instance.OnSpecial;
+            @Special.performed -= instance.OnSpecial;
+            @Special.canceled -= instance.OnSpecial;
         }
 
         /// <summary>
@@ -400,5 +615,40 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMove(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ShootLasers" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnShootLasers(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ShootMissiles" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnShootMissiles(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ShieldPressed" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnShieldPressed(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ShieldReleased" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnShieldReleased(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Special" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSpecial(InputAction.CallbackContext context);
     }
 }

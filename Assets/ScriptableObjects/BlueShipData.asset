@@ -15,6 +15,6 @@ MonoBehaviour:
   shipName: Blue
   playerSprite: {fileID: -354191649082998739, guid: deaa11dbd03f92b44b8b4eff39044413, type: 3}
   laserSprite: {fileID: -4854367162513635942, guid: 888431acd851f2942a0d29e6e254c750, type: 3}
-  missileSprite: {fileID: 2457312933672712951, guid: 80e6f9ce0955b90488bf1c4341ec7283, type: 3}
+  missileSprite: {fileID: -1147064022968423778, guid: 57bcea541c81a874d82f0f158fb74adc, type: 3}
   healthBarBorder: {fileID: -2758448031277389751, guid: 83000b254f68357459d2994232814e14, type: 3}
   fillColor: {r: 0.1176471, g: 0.5647059, b: 1, a: 1}

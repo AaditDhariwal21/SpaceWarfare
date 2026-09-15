@@ -34,9 +34,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Shield",
+                    "name": "ShieldPressed",
                     "type": "Button",
                     "id": "0da7abf8-32cb-42d1-8045-8f38cf8f2c49",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ShieldReleased",
+                    "type": "Button",
+                    "id": "0ee9e8e2-c637-40ac-a7e6-2e9c13a92b85",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -167,10 +176,10 @@
                     "name": "",
                     "id": "d5ea396f-546a-4c60-981f-1974102de08c",
                     "path": "<Keyboard>/leftShift",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": ";KeyboardP1",
-                    "action": "Shield",
+                    "action": "ShieldPressed",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -178,10 +187,10 @@
                     "name": "",
                     "id": "bc4971f6-bdcd-43d0-bfe0-c8695555687a",
                     "path": "<Keyboard>/semicolon",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": ";KeyboardP2",
-                    "action": "Shield",
+                    "action": "ShieldPressed",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -204,6 +213,28 @@
                     "processors": "",
                     "groups": ";KeyboardP2",
                     "action": "Special",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bbeaea61-3028-4403-84f4-b62295c12637",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": ";KeyboardP1",
+                    "action": "ShieldReleased",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4ffdfc69-51fc-4e7c-84f8-37d9dc026dbb",
+                    "path": "<Keyboard>/semicolon",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": ";KeyboardP2",
+                    "action": "ShieldReleased",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -30,6 +30,8 @@ public class PlayerWeapon : MonoBehaviour
 
         laserReloading = false;
         missileReloading = false;
+
+        GetComponent<SpriteRenderer>().sprite = shipData.playerSprite;
     }
 
     public void OnShootLasers(InputValue input)

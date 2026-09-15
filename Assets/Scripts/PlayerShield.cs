@@ -5,14 +5,47 @@ using UnityEngine.InputSystem;
 public class PlayerShield : MonoBehaviour
 {
     public PlayerStateMachine stateMachine;
+    public GameObject shieldInstance;
+    Animator shieldAnimator;
+
     public float raiseDuration = 0.25f;
     bool keyHeld;
 
-    public void OnShield(InputValue input)
+    void Awake()
     {
-        keyHeld = input.isPressed;
-        if (keyHeld) BeginRaise();
-        else ReleaseShield();
+        shieldAnimator = shieldInstance.GetComponent<Animator>();
+        shieldInstance.SetActive(false);
+    }
+
+    void OnEnable() => stateMachine.OnStateChanged += HandleStateChanged;
+    void OnDisable() => stateMachine.OnStateChanged -= HandleStateChanged;
+
+    void HandleStateChanged(PlayerActionState prev, PlayerActionState next)
+    {
+         bool shouldShow = next == PlayerActionState.ShieldRaise || next == PlayerActionState.Shielding;
+
+        if (shouldShow)
+        {
+            if (!shieldInstance.activeSelf) shieldInstance.SetActive(true);
+            shieldAnimator.SetBool("ActivateShield", true);
+        }
+        else
+        {
+            shieldAnimator.SetBool("ActivateShield", false);
+            StartCoroutine(DisableAfterDeactivate());
+        }
+    }
+
+    public void OnShieldPressed()
+    {
+        keyHeld = true;
+        BeginRaise();
+    }
+
+    public void OnShieldReleased()
+    {
+        keyHeld = false;
+        ReleaseShield();
     }
 
     void BeginRaise()
@@ -36,13 +69,22 @@ public class PlayerShield : MonoBehaviour
             stateMachine.ChangeState(PlayerActionState.Neutral);
     }
 
-    public bool isShieldActive() => stateMachine.currentState == PlayerActionState.Shielding;
-
-    // Called by Projectile when a hit lands mid-raise
+    IEnumerator DisableAfterDeactivate()
+    {
+        yield return new WaitForSeconds(raiseDuration);
+        if (stateMachine.currentState != PlayerActionState.ShieldRaise &&
+            stateMachine.currentState != PlayerActionState.Shielding)
+        {
+            shieldInstance.SetActive(false);
+        }
+    }
+    
     public void InterruptRaise()
     {
-        StopAllCoroutines(); // kill the in-flight FinishRaise timer — see below for why this matters
+        StopAllCoroutines(); 
         stateMachine.ChangeState(PlayerActionState.Neutral);
         if (keyHeld) BeginRaise(); // restart from 0 only if they're still holding it
     }
+
+    public bool isShieldActive() => stateMachine.currentState == PlayerActionState.Shielding;
 }

@@ -15,6 +15,6 @@ MonoBehaviour:
   shipName: Red
   playerSprite: {fileID: -590947418329346848, guid: d2dd31e694b45a2499f598a6bd7fdb8d, type: 3}
   laserSprite: {fileID: -1392933187468337125, guid: 535a5f1b9224ed9458024ef847991481, type: 3}
-  missileSprite: {fileID: 6632776724767879869, guid: 8387cef10fa2bfa48a83eb6de63be88d, type: 3}
+  missileSprite: {fileID: 2457312933672712951, guid: fdf927b63f5c9d341a46fef02721884e, type: 3}
   healthBarBorder: {fileID: 7873744191865863499, guid: 60f520a3b9b9f974293cf919dc6f546c, type: 3}
   fillColor: {r: 1, g: 0, b: 0, a: 1}

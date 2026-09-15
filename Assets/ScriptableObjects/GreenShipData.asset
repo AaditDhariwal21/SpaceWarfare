@@ -15,6 +15,6 @@ MonoBehaviour:
   shipName: Green
   playerSprite: {fileID: 1626006803560414696, guid: c1d4c0626422aaa4792e844c6e2bb550, type: 3}
   laserSprite: {fileID: -7388614713056731152, guid: d1c763d876587474b82fda41d84f9297, type: 3}
-  missileSprite: {fileID: -1147064022968423778, guid: 1f833d1b45e2e7448bdbcce10a3f65b6, type: 3}
+  missileSprite: {fileID: 4969747886689437178, guid: 8632999ef4fae4e4186d7eb9be577959, type: 3}
   healthBarBorder: {fileID: -5678205747314029744, guid: deb027b685ebe1440aa4e1a8a503747e, type: 3}
   fillColor: {r: 0.4862745, g: 0.9882354, b: 0, a: 1}
