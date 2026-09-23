@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerFocus : MonoBehaviour
 {
@@ -14,10 +15,6 @@ public class PlayerFocus : MonoBehaviour
     {
         currentFocus = 0f;
     }
-    void Start()
-    {
-        
-    }    
     void Update()
     {
         currentFocus = Math.Min(maxFocus, currentFocus + (focusGenPerSecond * Time.deltaTime));
@@ -30,5 +27,16 @@ public class PlayerFocus : MonoBehaviour
     public void AddFocus(float blockedDamage)
     {
         currentFocus = Math.Min(currentFocus + (float)(0.5 * blockedDamage / 5), maxFocus); 
+    }
+
+    public void OnSpecial(InputValue input)
+    {
+        if(!input.isPressed) return;
+        if(currentFocus < 30) return;
+
+        if(currentFocus > 30)
+        {
+            currentFocus-=currentFocus;
+        }
     }
 }
