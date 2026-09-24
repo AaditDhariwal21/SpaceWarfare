@@ -9,7 +9,7 @@ public class PlayerStateMachine : MonoBehaviour
     public event Action<PlayerActionState, PlayerActionState> OnStateChanged;
     public PlayerActionState getPlayerActionState()
     {
-        return currentState;
+        return currentState;    
     }
 
     public void ChangeState(PlayerActionState next) {

@@ -9,4 +9,6 @@ public class ShipData : ScriptableObject
     public Sprite missileSprite;
     public Sprite healthBarBorder;
     public Color fillColor;
+    public SpecialController specialController;
+
 }

@@ -8,7 +8,6 @@ public class PlayerFocus : MonoBehaviour
     private float maxFocus = 90f;
     public float MaxFocus => maxFocus;
     private float currentFocus;
-    private int segmentCount = 3;
     private float focusGenPerSecond = 1f;
 
     void Awake()
@@ -36,7 +35,9 @@ public class PlayerFocus : MonoBehaviour
 
         if(currentFocus > 30)
         {
-            currentFocus-=currentFocus;
+            currentFocus -= 30;
+            
         }
+        
     }
 }
