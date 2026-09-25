@@ -18,3 +18,5 @@ MonoBehaviour:
   missileSprite: {fileID: 4969747886689437178, guid: 8632999ef4fae4e4186d7eb9be577959, type: 3}
   healthBarBorder: {fileID: -5678205747314029744, guid: deb027b685ebe1440aa4e1a8a503747e, type: 3}
   fillColor: {r: 0.4862745, g: 0.9882354, b: 0, a: 1}
+  specialName: Cluster Missile
+  specialControllerPrefab: {fileID: 1378720624943279703, guid: 57b4d3cc021c0b14fa47087a2178c00f, type: 3}

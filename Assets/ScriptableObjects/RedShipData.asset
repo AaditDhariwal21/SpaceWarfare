@@ -18,3 +18,5 @@ MonoBehaviour:
   missileSprite: {fileID: 2457312933672712951, guid: fdf927b63f5c9d341a46fef02721884e, type: 3}
   healthBarBorder: {fileID: 7873744191865863499, guid: 60f520a3b9b9f974293cf919dc6f546c, type: 3}
   fillColor: {r: 1, g: 0, b: 0, a: 1}
+  specialName: Meteor Mash
+  specialControllerPrefab: {fileID: 0}

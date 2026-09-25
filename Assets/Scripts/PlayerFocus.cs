@@ -36,7 +36,7 @@ public class PlayerFocus : MonoBehaviour
         if(currentFocus > 30)
         {
             currentFocus -= 30;
-            
+            Instantiate(GetComponent<PlayerWeapon>().shipData.specialControllerPrefab, transform);
         }
         
     }
