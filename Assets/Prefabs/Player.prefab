@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8212150779537868490}
   - component: {fileID: 6791950540983162568}
+  - component: {fileID: 8815314507687506000}
   - component: {fileID: 6139511500872260180}
   - component: {fileID: 2856291765320609936}
   - component: {fileID: 7268302899149880335}
@@ -49,6 +50,7 @@ GameObject:
   - component: {fileID: 4692687455014419408}
   - component: {fileID: 3574105938860884249}
   - component: {fileID: 3553035754602238203}
+  - component: {fileID: 1482234997962986634}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -132,6 +134,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &8815314507687506000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6316358217780995276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c0e12e3c4cd6f8488628c512c603993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!114 &6139511500872260180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,9 +202,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerWeapon
   firePoint: {fileID: 5422665953409843119}
-  shipData: {fileID: 11400000, guid: 0e550de801f59574f92c5fd631b0243a, type: 2}
   laserPrefab: {fileID: 2792166494850708381, guid: 0f3597e2816611d418237614d018ced3, type: 3}
   missilePrefab: {fileID: 276187435809193950, guid: 128ee804c95923b4b9a3b825604f3ccc, type: 3}
+  shipData: {fileID: 11400000, guid: 0e550de801f59574f92c5fd631b0243a, type: 2}
   laserMaxAmmo: 15
   missileMaxAmmo: 5
   laserReloadTime: 3
@@ -319,6 +333,27 @@ PolygonCollider2D:
       - {x: 0.45499998, y: -0.265}
       - {x: 0.48805922, y: -0.21682632}
   m_UseDelaunayMesh: 1
+--- !u!114 &1482234997962986634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6316358217780995276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290ce993ed2b17549ac3dd2502cf7333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerWeapon
+  firePoint: {fileID: 0}
+  laserPrefab: {fileID: 0}
+  missilePrefab: {fileID: 0}
+  shipData: {fileID: 0}
+  laserMaxAmmo: 15
+  missileMaxAmmo: 5
+  laserReloadTime: 3
+  missileReloadTime: 5
+  stateMachine: {fileID: 0}
 --- !u!1001 &2348557926789401695
 PrefabInstance:
   m_ObjectHideFlags: 0

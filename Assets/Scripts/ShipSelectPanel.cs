@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using NUnit.Framework;
 
 public class ShipSelectPanel : MonoBehaviour
 {
+    public int playerIndex;
     public Image shipImage;
     public TextMeshProUGUI shipName;
     public Image specialImage;
@@ -51,5 +53,15 @@ public class ShipSelectPanel : MonoBehaviour
             }
             b.interactable = false;
         }
+    }
+
+    public bool GetCurrentState()
+    {
+        return isReady;
+    }
+
+    public ShipData GetCurrentShipData()
+    {
+        return allShipData[currentIndex];
     }
 }

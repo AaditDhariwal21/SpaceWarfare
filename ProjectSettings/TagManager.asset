@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Shield
   - ChevronButton
+  - MatchStartButton
+  - SpawnP1
+  - SpawnP2
+  - Player1
+  - Player2
+  - PlayerSetupController
   layers:
   - Default
   - TransparentFX

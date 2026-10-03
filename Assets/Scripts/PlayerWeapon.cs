@@ -5,8 +5,6 @@ using UnityEngine.InputSystem;
 public class PlayerWeapon : MonoBehaviour
 {
     public Transform firePoint;
-    public ShipData shipData;
-
     public GameObject laserPrefab;
     public GameObject missilePrefab;
 
@@ -16,22 +14,28 @@ public class PlayerWeapon : MonoBehaviour
     public float laserReloadTime = 3f;
     public float missileReloadTime = 5f;
 
-    public PlayerStateMachine stateMachine;
-
     int laserAmmo;
     int missileAmmo;
     bool laserReloading;
     bool missileReloading;
 
+    private PlayerConfig playerConfig;
+
+    private PlayerStateMachine stateMachine;
+
     void Awake()
-    {
+    {   
+        stateMachine = GetComponent<PlayerStateMachine>();
+        playerConfig = GetComponent<PlayerConfig>();
+
         laserAmmo = laserMaxAmmo;
         missileAmmo = missileMaxAmmo;
 
         laserReloading = false;
         missileReloading = false;
 
-        GetComponent<SpriteRenderer>().sprite = shipData.playerSprite;
+        playerConfig = GetComponent<PlayerConfig>();
+
     }
 
     public void OnShootLasers(InputValue input)
@@ -41,7 +45,7 @@ public class PlayerWeapon : MonoBehaviour
         if (laserReloading || laserAmmo <= 0) return;
 
     
-        Fire(laserPrefab, shipData.laserSprite);
+        Fire(laserPrefab, playerConfig.GetShipData().laserSprite);
         laserAmmo--;
         if(laserAmmo <= 0 ) StartCoroutine(LaserReload());
     }
@@ -52,7 +56,7 @@ public class PlayerWeapon : MonoBehaviour
         if (stateMachine.currentState != PlayerActionState.Neutral) return;
         if (missileReloading || missileAmmo <= 0) return;
 
-        Fire(missilePrefab, shipData.missileSprite);
+        Fire(missilePrefab, playerConfig.GetShipData().missileSprite);
         missileAmmo--;
         if(missileAmmo <= 0) StartCoroutine(MissileReload());
     }
