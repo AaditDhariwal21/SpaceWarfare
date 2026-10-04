@@ -23,7 +23,7 @@
 
         void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.collider.CompareTag("Player"))
+            if (collision.collider.CompareTag("Player1") || collision.collider.CompareTag("Player2"))
             {
                 collision.collider.GetComponent<PlayerHealth>().TakeDamage(damage);
             }

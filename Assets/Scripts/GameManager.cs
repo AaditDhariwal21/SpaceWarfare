@@ -27,6 +27,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void BriefingButtonClick()
+    {
+        SceneManager.LoadScene(3);
+    }
+
     public void TryMatchStart()
     {
         ShipSelectPanel[] panels = FindObjectsByType<ShipSelectPanel>(FindObjectsSortMode.None);

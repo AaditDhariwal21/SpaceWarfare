@@ -204,12 +204,10 @@ MonoBehaviour:
   firePoint: {fileID: 5422665953409843119}
   laserPrefab: {fileID: 2792166494850708381, guid: 0f3597e2816611d418237614d018ced3, type: 3}
   missilePrefab: {fileID: 276187435809193950, guid: 128ee804c95923b4b9a3b825604f3ccc, type: 3}
-  shipData: {fileID: 11400000, guid: 0e550de801f59574f92c5fd631b0243a, type: 2}
   laserMaxAmmo: 15
   missileMaxAmmo: 5
   laserReloadTime: 3
   missileReloadTime: 5
-  stateMachine: {fileID: 3574105938860884249}
 --- !u!114 &3504920162415975694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9afb62104e7ae4aa09f805b12841bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  currentHealth: 0
 --- !u!114 &8965647111081117158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,12 +347,10 @@ MonoBehaviour:
   firePoint: {fileID: 0}
   laserPrefab: {fileID: 0}
   missilePrefab: {fileID: 0}
-  shipData: {fileID: 0}
   laserMaxAmmo: 15
   missileMaxAmmo: 5
   laserReloadTime: 3
   missileReloadTime: 5
-  stateMachine: {fileID: 0}
 --- !u!1001 &2348557926789401695
 PrefabInstance:
   m_ObjectHideFlags: 0
