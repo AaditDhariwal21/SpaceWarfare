@@ -86,4 +86,14 @@ public class PlayerWeapon : MonoBehaviour
         missileReloading = false;
     }
 
+    public int GetCurrentLaserAmmoCount()
+    {
+        return laserAmmo;
+    }
+
+    public int GetCurrentMissileAmmoCount()
+    {
+        return missileAmmo;
+    }
+
 }
