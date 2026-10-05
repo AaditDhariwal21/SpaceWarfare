@@ -14,16 +14,30 @@
             rb = GetComponent<Rigidbody2D>();
         }
 
+        void Start()
+        {
+            Destroy(gameObject, lifetime);
+        }
+
         public void Launch(Vector2 fireDirection)
         {
+            Launch(fireDirection,speed);
+        }
+
+        public void Launch(Vector2 fireDirection, float s)
+        {
             direction = fireDirection.normalized;
-            rb.linearVelocity = direction * speed;
-            Destroy(gameObject, lifetime);
+            rb.linearVelocity = direction * s;
         }
 
         void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.collider.CompareTag("Player1") || collision.collider.CompareTag("Player2"))
+
+            if (collision.otherCollider.CompareTag("ClusterBomb"))
+            {
+                collision.collider.GetComponentInParent<PlayerHealth>().TakeDamage(damage);
+            }
+            else if (collision.collider.CompareTag("Player1") || collision.collider.CompareTag("Player2"))
             {
                 collision.collider.GetComponent<PlayerHealth>().TakeDamage(damage);
             }

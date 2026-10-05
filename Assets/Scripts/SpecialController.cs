@@ -3,13 +3,10 @@ using UnityEngine;
 
 public abstract class SpecialController : MonoBehaviour
 {
-    public event Action OnFinished;
-
-    public abstract void Activate(Transform owner);
+    public abstract void Activate(Transform ship);
 
     protected void Finish()
     {
-        OnFinished?.Invoke();
         Destroy(gameObject);
     }
 }

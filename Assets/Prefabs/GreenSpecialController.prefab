@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5683812236553967567}
   - component: {fileID: 1378720624943279703}
   m_Layer: 0
-  m_Name: GreenShipSpecialController
+  m_Name: GreenSpecialController
   m_TagString: Untagged
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ae4b89f92338c4caac423d1e5c2bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GreenSpecialController
-  clusterMissilePrefab: {fileID: 0}
+  clusterMissilePrefab: {fileID: 2887514243320798752, guid: 1934e1362cd90df4a94818a2a22b2e54, type: 3}

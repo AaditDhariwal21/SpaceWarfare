@@ -50,7 +50,6 @@ GameObject:
   - component: {fileID: 4692687455014419408}
   - component: {fileID: 3574105938860884249}
   - component: {fileID: 3553035754602238203}
-  - component: {fileID: 1482234997962986634}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -332,25 +331,6 @@ PolygonCollider2D:
       - {x: 0.45499998, y: -0.265}
       - {x: 0.48805922, y: -0.21682632}
   m_UseDelaunayMesh: 1
---- !u!114 &1482234997962986634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6316358217780995276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 290ce993ed2b17549ac3dd2502cf7333, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerWeapon
-  firePoint: {fileID: 0}
-  laserPrefab: {fileID: 0}
-  missilePrefab: {fileID: 0}
-  laserMaxAmmo: 15
-  missileMaxAmmo: 5
-  laserReloadTime: 3
-  missileReloadTime: 5
 --- !u!1001 &2348557926789401695
 PrefabInstance:
   m_ObjectHideFlags: 0

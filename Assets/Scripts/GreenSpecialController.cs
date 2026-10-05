@@ -5,18 +5,19 @@ public class GreenSpecialController : SpecialController
 {
 
     public GameObject clusterMissilePrefab;
-    private float spawnOffsetY = 1f;
-    public override void Activate(Transform owner)
+    private float spawnOffsetY = 2f;
+    public override void Activate(Transform ship)
     {
-        SpawnMissile(owner, +spawnOffsetY);   // top
-        SpawnMissile(owner, -spawnOffsetY);   // bottom
+        SpawnMissile(ship, +spawnOffsetY);   // top
+        SpawnMissile(ship, -spawnOffsetY);   // bottom
 
         Finish(); 
     }
 
-    void SpawnMissile(Transform owner, float yOffset)
+    void SpawnMissile(Transform ship, float yOffset)
     {
-        Vector3 pos = owner.position + Vector3.up * yOffset;
-        GameObject m = Instantiate(clusterMissilePrefab, pos, owner.rotation);
+        Vector3 pos = ship.position + Vector3.up * yOffset;
+        GameObject m = Instantiate(clusterMissilePrefab, pos, ship.rotation);
+        m.GetComponent<ClusterMissile>().LaunchMissile(m.transform.up);
     }
 }
