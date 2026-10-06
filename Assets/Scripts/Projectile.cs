@@ -2,9 +2,10 @@
 
     public class Projectile : MonoBehaviour
     {
-        public float speed = 10f;
+        public float speed ;
         public float lifetime = 5f;
-        public int damage = 5;
+        public int damage;
+        public int priority;
 
         Rigidbody2D rb;
         Vector2 direction;
@@ -32,28 +33,29 @@
 
         void OnCollisionEnter2D(Collision2D collision)
         {
-
-            if (collision.otherCollider.CompareTag("ClusterBomb") || collision.otherCollider.CompareTag("Meteor"))
-            {
-                collision.collider.GetComponentInParent<PlayerHealth>().TakeDamage(damage);
-            }
-            else if (collision.collider.CompareTag("Player1") || collision.collider.CompareTag("Player2"))
+            if (collision.collider.CompareTag("Player1") || collision.collider.CompareTag("Player2"))
             {
                 collision.collider.GetComponent<PlayerHealth>().TakeDamage(damage);
+                Destroy(gameObject);
             }
             else if (collision.collider.CompareTag("Shield"))
             {
                 var stateMachine = collision.collider.GetComponentInParent<PlayerStateMachine>();
 
-                if (stateMachine.currentState == PlayerActionState.ShieldRaise)
+                if (priority == 2 || stateMachine.currentState == PlayerActionState.ShieldRaise)
                 {
                     collision.collider.GetComponentInParent<PlayerHealth>().TakeDamage(damage);
+                    Destroy(gameObject);
                 }
                 else if (stateMachine.currentState == PlayerActionState.Shielding)
                 {
                     collision.collider.GetComponentInParent<PlayerFocus>().AddFocus(damage);
+                    Destroy(gameObject);
                 }
             }
-            Destroy(gameObject);
+            else if (collision.collider.GetComponent<Projectile>().priority >= priority)
+            {
+                Destroy(gameObject);
+            }
         }
     }

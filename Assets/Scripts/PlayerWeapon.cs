@@ -67,6 +67,7 @@ public class PlayerWeapon : MonoBehaviour
 
         var proj = Instantiate(prefab, firePoint.position, firePoint.rotation);
         proj.GetComponent<SpriteRenderer>().sprite=sprite;
+        proj.layer = LayerMask.NameToLayer("P" + playerConfig.GetPlayerNumber() + "normal");
         proj.GetComponent<Projectile>().Launch(firePoint.up);
     }
 

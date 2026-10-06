@@ -10,6 +10,12 @@ public class PlayerConfig : MonoBehaviour
         this.playerNumber = playerNumber;
     }
 
+    public int GetPlayerNumber()
+    {
+        return playerNumber;
+    }
+
+
     public ShipData GetShipData()
     {
         return shipData;    
@@ -18,6 +24,14 @@ public class PlayerConfig : MonoBehaviour
     public void SetShipData(ShipData shipData)
     {
         this.shipData = shipData;
+    }
+
+    public void SetShipLayer()
+    {
+        int layer = LayerMask.NameToLayer("P" + playerNumber + "ship");
+        gameObject.layer = layer;
+
+        foreach (var t in GetComponentsInChildren<Transform>(true)) if (t.CompareTag("Shield")) t.gameObject.layer = layer;
     }
 
     public void Init()

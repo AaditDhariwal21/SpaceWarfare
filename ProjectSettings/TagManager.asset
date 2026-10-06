@@ -12,6 +12,7 @@ TagManager:
   - Player1
   - Player2
   - PlayerSetupController
+  - Meteor
   - ClusterBomb
   layers:
   - Default
@@ -20,12 +21,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - P1ship
+  - P2ship
+  - P1normal
+  - P2normal
+  - P1special
+  - P2special
   - 
   - 
   - 

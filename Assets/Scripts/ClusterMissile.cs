@@ -41,8 +41,9 @@ public class ClusterMissile : MonoBehaviour
 
     void SpawnBomb(int side, float angle)
     {
-         Vector2 dir = Quaternion.Euler(0, 0, side * angle) * transform.up;   // angled direction only
+        Vector2 dir = Quaternion.Euler(0, 0, side * angle) * transform.up;   // angled direction only
         GameObject b = Instantiate(clusterBomb, transform.position, transform.rotation);
+        b.layer = gameObject.layer;
         b.GetComponent<BombEject>().Begin(dir, speed);
     }
 

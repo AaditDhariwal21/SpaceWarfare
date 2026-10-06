@@ -26,12 +26,14 @@ public class PlayerSetupController : MonoBehaviour
         player1Config.SetPlayerNumber(1);
         player1Config.SetShipData(shipData1);
         player1Config.GetComponent<PlayerInput>().SwitchCurrentControlScheme("KeyboardP1",Keyboard.current);
+        player1Config.SetShipLayer();
         player1Config.Init();
 
         PlayerConfig player2Config = Instantiate(playerPrefab, spawnP2.position, spawnP2.rotation).GetComponent<PlayerConfig>();
         player2Config.SetPlayerNumber(2);
         player2Config.SetShipData(shipData2);
         player2Config.GetComponent<PlayerInput>().SwitchCurrentControlScheme("KeyboardP2",Keyboard.current);
+        player2Config.SetShipLayer();
         player2Config.Init();
 
         hud.BindPlayers(player1Config, player2Config);

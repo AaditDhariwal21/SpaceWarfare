@@ -17,6 +17,7 @@ public class RedSpecialController : SpecialController
         {
             Vector3 spawn = new Vector3(posX, Random.Range(-4f, 4f), 0f);
             GameObject m = Instantiate(meteorPrefab, spawn, ship.rotation);
+            m.layer = LayerMask.NameToLayer("P" + ship.GetComponent<PlayerConfig>().GetPlayerNumber()+"special");
 
             yield return new WaitForSeconds(0.3f);  
 

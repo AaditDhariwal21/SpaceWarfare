@@ -109,6 +109,7 @@ MonoBehaviour:
   speed: 12
   lifetime: 5
   damage: 15
+  priority: 1
 --- !u!50 &3557774502122056783
 Rigidbody2D:
   serializedVersion: 5
@@ -117,9 +118,9 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276187435809193950}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
