@@ -26,7 +26,9 @@ public class ShipSelectPanel : MonoBehaviour
         shipName.text = allShipData[currentIndex].shipName;
         shipName.color = allShipData[currentIndex].fillColor;
         specialName.text = "Special :\n" + allShipData[currentIndex].specialName;
+        specialImage.sprite = allShipData[currentIndex].specialImageSprite;
     }
+
     public void OnNextPressed()
     {
         currentIndex++;

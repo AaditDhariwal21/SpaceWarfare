@@ -9,9 +9,15 @@ public class PlayerFocus : MonoBehaviour
     public float MaxFocus => maxFocus;
     private float currentFocus;
     private float focusGenPerSecond = 1f;
+    private const float specialCost = 30f;
+
+    private PlayerConfig playerConfig;
+    private PlayerStateMachine stateMachine;
 
     void Awake()
     {
+        playerConfig = GetComponent<PlayerConfig>();
+        stateMachine = GetComponent<PlayerStateMachine>();
         currentFocus = 0f;
     }
     void Update()
@@ -31,13 +37,19 @@ public class PlayerFocus : MonoBehaviour
     public void OnSpecial(InputValue input)
     {
         if(!input.isPressed) return;
-        if(currentFocus < 30) return;
+        if (stateMachine.currentState == PlayerActionState.UsingSpecial) return;
+        if(currentFocus < specialCost) return;
 
-        if(currentFocus > 30)
-        {
-            currentFocus -= 30;
-            Instantiate(GetComponent<PlayerConfig>().GetShipData().specialControllerPrefab, transform);
-        }
-        
+        currentFocus -= specialCost;
+
+        SpecialController sc = Instantiate(playerConfig.GetShipData().specialControllerPrefab,transform.position,transform.rotation);
+        stateMachine.ChangeState(PlayerActionState.UsingSpecial);
+        sc.OnFinished += HandleSpecialFinished;
+        sc.Activate(transform);   
+    }
+
+    void HandleSpecialFinished()
+    {
+        stateMachine.ChangeState(PlayerActionState.Neutral);
     }
 }

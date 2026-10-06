@@ -795,6 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de98caa2ac30d8344bb9551e63d6d1c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  playerIndex: 0
   shipImage: {fileID: 4971864462725664831}
   shipName: {fileID: 6184421323375917949}
   specialImage: {fileID: 1104750353994240583}
@@ -870,7 +871,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 4989708251766280082, guid: 8efc17b96d5f70b41978d4c072a94da2, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1

@@ -19,4 +19,5 @@ MonoBehaviour:
   healthBarBorder: {fileID: -5678205747314029744, guid: deb027b685ebe1440aa4e1a8a503747e, type: 3}
   fillColor: {r: 0.4862745, g: 0.9882354, b: 0, a: 1}
   specialName: Cluster Missile
+  specialImageSprite: {fileID: 2383268440794708020, guid: 4530f5f650c503940a27820a74f01932, type: 3}
   specialControllerPrefab: {fileID: 1378720624943279703, guid: 57b4d3cc021c0b14fa47087a2178c00f, type: 3}

@@ -10,6 +10,7 @@ public class ShipData : ScriptableObject
     public Sprite healthBarBorder;
     public Color fillColor;
     public string specialName;
+    public Sprite specialImageSprite;
     public SpecialController specialControllerPrefab;
 
 }

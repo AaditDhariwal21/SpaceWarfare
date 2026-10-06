@@ -95,14 +95,4 @@ public class PlayerWeapon : MonoBehaviour
     {
         return missileAmmo;
     }
-
-    public void OnSpecial()
-    {
-        //instantiate the special controller
-        SpecialController specialController = Instantiate(playerConfig.GetShipData().specialControllerPrefab);
-
-        //use it's activate function
-        specialController.Activate(transform);
-    }
-
 }
