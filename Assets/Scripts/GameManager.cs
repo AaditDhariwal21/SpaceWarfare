@@ -21,17 +21,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }    
     }
-
-    public void PlayButtonClick()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
-    public void BriefingButtonClick()
-    {
-        SceneManager.LoadScene(3);
-    }
-
     public void TryMatchStart()
     {
         ShipSelectPanel[] panels = FindObjectsByType<ShipSelectPanel>(FindObjectsSortMode.None);

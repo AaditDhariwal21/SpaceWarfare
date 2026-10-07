@@ -808,7 +808,7 @@ GameObject:
   - component: {fileID: 1135732960}
   - component: {fileID: 1135732959}
   m_Layer: 0
-  m_Name: MatchSetupUI
+  m_Name: MatchSetupUIController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
