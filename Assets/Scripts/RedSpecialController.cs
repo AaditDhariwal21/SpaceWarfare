@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class RedSpecialController : SpecialController
 {
-    public GameObject meteorPrefab;
+   public GameObject meteorPrefab;
    public override void Activate(Transform ship)
     {
         StartCoroutine(SpawnMeteors(ship));

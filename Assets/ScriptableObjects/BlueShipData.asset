@@ -18,5 +18,6 @@ MonoBehaviour:
   missileSprite: {fileID: -1147064022968423778, guid: 57bcea541c81a874d82f0f158fb74adc, type: 3}
   healthBarBorder: {fileID: -2758448031277389751, guid: 83000b254f68357459d2994232814e14, type: 3}
   fillColor: {r: 0.1176471, g: 0.5647059, b: 1, a: 1}
-  specialName: Repulsor
-  specialControllerPrefab: {fileID: 0}
+  specialName: Comets
+  specialImageSprite: {fileID: -1388174758692507071, guid: ca05062a67b7ee14f81fa6c9b96134c0, type: 3}
+  specialControllerPrefab: {fileID: 3119229415009784515, guid: 8f01461ce5cbaaa4a90e68fcf777a3c7, type: 3}

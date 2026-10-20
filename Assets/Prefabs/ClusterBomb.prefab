@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   speed: 15
   lifetime: 5
-  damage: 50
+  damage: 35
   priority: 2
 --- !u!114 &5785583315545121178
 MonoBehaviour:
