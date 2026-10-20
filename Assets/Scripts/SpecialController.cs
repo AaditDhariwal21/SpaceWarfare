@@ -8,7 +8,7 @@ public abstract class SpecialController : MonoBehaviour
     public event Action OnFinished;
     protected void Finish()
     {
-         OnFinished?.Invoke();
+        OnFinished?.Invoke();
         Destroy(gameObject);
     }
 }

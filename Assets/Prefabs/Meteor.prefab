@@ -170,9 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae541b8fed476b4db930f03e7c51edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
-  speed: 17
+  speed: 30
   lifetime: 5
-  damage: 40
+  damage: 25
   priority: 2
 --- !u!95 &4412289395444020582
 Animator:

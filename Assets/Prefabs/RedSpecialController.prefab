@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   meteorPrefab: {fileID: 5242680605662745544, guid: 1c0118060131f48438ecfa326917ec1f, type: 3}
+  shiftSpeed: 10
