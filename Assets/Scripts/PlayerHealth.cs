@@ -23,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
         if (isAlive && currentHealth <= 0)
     {
         isAlive = false;
-        Debug.Log("Game Over");
+        GameManager.gmInstance.PlayerDied(gameObject.tag);
     }
     }
 

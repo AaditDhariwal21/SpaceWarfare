@@ -9,7 +9,7 @@ public class MatchSetupUI : MonoBehaviour
     {
         foreach(ShipSelectPanel p in panels)
         {
-            if(!p.GetCurrentState()) return;
+            if(!p.GetReadyState()) return;
         }
 
         startButton.interactable = true;

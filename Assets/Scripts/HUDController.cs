@@ -1,4 +1,6 @@
+using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +18,18 @@ public class HUDController : MonoBehaviour
     [SerializeField] private LaserAmmoHUD p2LaserAmmoHUD;
     [SerializeField] private MissileAmmoHUD p2MissileAmmoHUD;
 
+    [SerializeField] private Image roundwinP1;
+    [SerializeField] private Image roundwinP2;
+    
+    [SerializeField] private Sprite[] roundWinCounterImages;
+
+
+    void Start()
+    {
+        if (GameManager.gmInstance != null) GameManager.gmInstance.RegisterHUD(this);
+
+        
+    }
     public void BindPlayers(PlayerConfig player1, PlayerConfig player2)
     {
         p1HealthBar.Bind(player1);
@@ -27,5 +41,17 @@ public class HUDController : MonoBehaviour
         p2FocusBar.Bind(player2);
         p2LaserAmmoHUD.Bind(player2);
         p2MissileAmmoHUD.Bind(player2);
+    }
+
+    public void SetWins(int playerNumber, int playerWins)
+    {
+        if(playerNumber == 1)
+        {
+            roundwinP1.sprite = roundWinCounterImages[playerWins];
+        }
+        else
+        {
+            roundwinP2.sprite = roundWinCounterImages[playerWins];
+        }
     }
 }

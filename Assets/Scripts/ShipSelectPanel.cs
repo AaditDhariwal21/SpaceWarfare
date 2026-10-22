@@ -56,8 +56,8 @@ public class ShipSelectPanel : MonoBehaviour
             b.interactable = false;
         }
     }
-
-    public bool GetCurrentState()
+    
+    public bool GetReadyState()
     {
         return isReady;
     }
