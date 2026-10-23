@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
     private int roundTimer;
     private Coroutine timerCoroutine;
     private HUDController hud;
+    
+    bool gamePaused = false;
+
     private void Awake()
     {
         if (gmInstance == null)
@@ -30,6 +33,33 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }    
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.P) && currentGameState == MatchState.RoundInPlay)
+        {
+
+            PlayerInput p1Input = GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerInput>();
+            PlayerInput p2Input = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerInput>();
+
+            if (gamePaused)
+            {
+                gamePaused = false;
+                p1Input.ActivateInput();
+                p2Input.ActivateInput();
+                Time.timeScale = 1;
+            }
+            else
+            {
+                gamePaused = true;
+                p1Input.DeactivateInput();
+                p2Input.DeactivateInput();
+                Time.timeScale = 0;
+            }
+
+            hud.SetPanel(gamePaused);
+        }
     }
     public void TryMatchStart()
     {

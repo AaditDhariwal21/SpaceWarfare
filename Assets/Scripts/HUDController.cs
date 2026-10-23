@@ -1,6 +1,3 @@
-using System;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +19,8 @@ public class HUDController : MonoBehaviour
     [SerializeField] private Image roundwinP2;
     
     [SerializeField] private Sprite[] roundWinCounterImages;
+
+    [SerializeField] private GameObject pausePanel;
 
 
     void Start()
@@ -53,5 +52,10 @@ public class HUDController : MonoBehaviour
         {
             roundwinP2.sprite = roundWinCounterImages[playerWins];
         }
+    }
+    
+    public void SetPanel(bool enabled)
+    {
+        pausePanel.SetActive(enabled);
     }
 }
