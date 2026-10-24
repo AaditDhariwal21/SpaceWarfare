@@ -1,3 +1,6 @@
+using System;
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,8 +22,19 @@ public class HUDController : MonoBehaviour
     [SerializeField] private Image roundwinP2;
     
     [SerializeField] private Sprite[] roundWinCounterImages;
-
+    [SerializeField] private TextMeshProUGUI preroundTimer;
     [SerializeField] private GameObject pausePanel;
+
+    [Header("Between Rounds Panel")]
+    [SerializeField] private GameObject btwRoundsPanel;
+    [SerializeField] private TextMeshProUGUI whichPlayerWonText;
+    [SerializeField] private TextMeshProUGUI scoreText;
+
+    [Header("Match Over Panel")]
+    [SerializeField] private GameObject matchOverPanel;
+    [SerializeField] private TextMeshProUGUI finalScoreText;
+    [SerializeField] private TextMeshProUGUI matchWinnerText;
+
 
 
     void Start()
@@ -54,8 +68,54 @@ public class HUDController : MonoBehaviour
         }
     }
     
-    public void SetPanel(bool enabled)
+    public void SetPausePanel(bool enabled)
     {
         pausePanel.SetActive(enabled);
     }
+
+    public IEnumerator RunPreroundTimer(int sec)
+    {
+        preroundTimer.gameObject.SetActive(true);
+
+        preroundTimer.text = "" + sec;
+        int timer = sec;
+    
+        while (timer > 0)
+        {
+            yield return new WaitForSeconds(1f);
+            timer--;
+            preroundTimer.text = ""+timer;
+        }
+
+        preroundTimer.gameObject.SetActive(false);
+    }
+
+    public void SetBtwRoundsPanel(bool enabled, PlayerConfig roundWinnerPlayerConfig, int p1Wins, int p2Wins)
+    {
+        btwRoundsPanel.SetActive(enabled);
+
+        whichPlayerWonText.text = roundWinnerPlayerConfig.GetShipData().shipName + " (player " + roundWinnerPlayerConfig.GetPlayerNumber() + ") won this round";
+        scoreText.text = "SCORE : " + p1Wins + " - " + p2Wins;
+    }
+
+     public void SetBtwRoundsPanel(bool enabled)
+    {
+        btwRoundsPanel.SetActive(enabled);
+    }
+
+    public void SetMatchOverPanel(bool enabled, PlayerConfig matchWinnerPlayerConfig, int p1Wins, int p2Wins)
+    {
+        matchOverPanel.SetActive(enabled);
+
+        finalScoreText.text = "SCORE : " + p1Wins + " - " + p2Wins;
+        matchWinnerText.text = matchWinnerPlayerConfig.GetShipData().shipName + " (player " + matchWinnerPlayerConfig.GetPlayerNumber() + ") WINS";
+        
+    }
+
+     public void SetMatchOverPanel(bool enabled)
+    {
+        matchOverPanel.SetActive(enabled);
+    }
+
+
 }

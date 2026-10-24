@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 0;
             }
 
-            hud.SetPanel(gamePaused);
+            hud.SetPausePanel(gamePaused);
         }
     }
     public void TryMatchStart()
@@ -101,6 +101,7 @@ public class GameManager : MonoBehaviour
         yield return null;
         SetPlayerInput(false);
 
+        Coroutine preroundTimerCoroutine = StartCoroutine(hud.RunPreroundTimer(3));    
         yield return new WaitForSeconds(3f);
         SetPlayerInput(true);
 
@@ -131,18 +132,18 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDied(String tag)
     {
-
         if (currentGameState != MatchState.RoundInPlay) return;
 
         if(tag == "Player1")
         {
             p2Wins++;
+            RoundEnds(GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerConfig>());
         }
         else
         {
             p1Wins++;
+            RoundEnds(GameObject.FindGameObjectWithTag("Player1").GetComponent<PlayerConfig>());
         }
-        RoundEnds();
     }
 
      public void TimerHit0()
@@ -156,15 +157,16 @@ public class GameManager : MonoBehaviour
         if(p1ShipHealth.getCurrentHealth() > p2ShipHealth.getCurrentHealth())
         {
             p1Wins++;
+            RoundEnds(p1ShipHealth.GetComponent<PlayerConfig>());
         }
         else
         { 
             p2Wins++;
+            RoundEnds(p2ShipHealth.GetComponent<PlayerConfig>());
         }
-        RoundEnds();
     }
 
-    private void RoundEnds()
+    private void RoundEnds(PlayerConfig roundWinnerPlayerConfig)
     {
         currentGameState = MatchState.RoundOver;
         if(timerCoroutine != null) StopCoroutine(timerCoroutine);
@@ -179,14 +181,15 @@ public class GameManager : MonoBehaviour
 
         if(p1Wins == 2 || p2Wins == 2)
         {
-            MatchOver();
+            MatchOver(roundWinnerPlayerConfig);
         }
         else
         {
+            hud.SetBtwRoundsPanel(true, roundWinnerPlayerConfig, p1Wins, p2Wins);
             StartCoroutine(LoadNextRound());
         }
     }
-    private void MatchOver()
+    private void MatchOver(PlayerConfig matchWinnerPlayerConfig)
     {
         currentGameState = MatchState.MatchOver;
 
@@ -198,6 +201,8 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Player 2 Won.");
         }
+
+        hud.SetMatchOverPanel(true, matchWinnerPlayerConfig, p1Wins, p2Wins);
     }
 
     IEnumerator LoadNextRound()
@@ -205,7 +210,8 @@ public class GameManager : MonoBehaviour
 
         if(currentGameState != MatchState.RoundOver) yield break;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(5f);
+        hud.SetBtwRoundsPanel(false);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         StartCoroutine(PreRound());
