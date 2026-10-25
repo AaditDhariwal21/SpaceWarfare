@@ -17,5 +17,5 @@ public class MatchSetupUI : MonoBehaviour
     public void OnStartButtonPressed()
     {
         GameManager.gmInstance.TryMatchStart(); 
-   }
+    }
 }

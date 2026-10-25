@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }    
     }
 
@@ -82,7 +83,9 @@ public class GameManager : MonoBehaviour
         p2Wins = 0;
         roundNumber = 0;
 
+        AudioManager.amInstance.Play("ButtonClick");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        AudioManager.amInstance.Play("Fight Background Theme");
         StartCoroutine(PreRound());
     }
     public void RegisterHUD(HUDController newHud)
@@ -101,8 +104,9 @@ public class GameManager : MonoBehaviour
         yield return null;
         SetPlayerInput(false);
 
-        Coroutine preroundTimerCoroutine = StartCoroutine(hud.RunPreroundTimer(3));    
-        yield return new WaitForSeconds(3f);
+        Coroutine preroundTimerCoroutine = StartCoroutine(hud.RunPreroundTimer(3));
+        AudioManager.amInstance.Play("PreRoundCountdown");    
+        yield return new WaitForSeconds(4f);
         SetPlayerInput(true);
 
         StartRound();
@@ -125,6 +129,11 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             roundTimer--;
+
+            if(roundTimer == 10)
+            {
+                AudioManager.amInstance.Play("Last10Sec");
+            }
         }
 
         TimerHit0();
@@ -249,6 +258,4 @@ public class GameManager : MonoBehaviour
     {
         return selectedShipData2;
     }
-    
-    
 }

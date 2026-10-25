@@ -46,6 +46,7 @@ public class PlayerWeapon : MonoBehaviour
 
     
         Fire(laserPrefab, playerConfig.GetShipData().laserSprite);
+        AudioManager.amInstance.Play("LaserSFX");
         laserAmmo--;
         if(laserAmmo <= 0 ) StartCoroutine(LaserReload());
     }
@@ -57,6 +58,7 @@ public class PlayerWeapon : MonoBehaviour
         if (missileReloading || missileAmmo <= 0) return;
 
         Fire(missilePrefab, playerConfig.GetShipData().missileSprite);
+        AudioManager.amInstance.Play("MissileSFX");
         missileAmmo--;
         if(missileAmmo <= 0) StartCoroutine(MissileReload());
     }

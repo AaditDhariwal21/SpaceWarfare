@@ -35,7 +35,8 @@
         {
             if (collision.collider.CompareTag("Player1") || collision.collider.CompareTag("Player2"))
             {
-                collision.collider.GetComponent<PlayerHealth>().TakeDamage(damage);
+                AudioManager.amInstance.Play("ShipHit");
+                collision.collider.GetComponent<PlayerHealth>().TakeDamage(damage);   
                 Destroy(gameObject);
             }
             else if (collision.collider.CompareTag("Shield"))
@@ -44,11 +45,13 @@
 
                 if (priority == 2 || stateMachine.currentState == PlayerActionState.ShieldRaise)
                 {
+                    AudioManager.amInstance.Play("ShipHit");
                     collision.collider.GetComponentInParent<PlayerHealth>().TakeDamage(damage);
                     Destroy(gameObject);
                 }
                 else if (stateMachine.currentState == PlayerActionState.Shielding)
                 {
+                    AudioManager.amInstance.Play("ShieldHit");
                     collision.collider.GetComponentInParent<PlayerFocus>().AddFocus(damage);
                     Destroy(gameObject);
                 }

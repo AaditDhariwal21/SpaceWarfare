@@ -80,7 +80,7 @@ public class HUDController : MonoBehaviour
         preroundTimer.text = "" + sec;
         int timer = sec;
     
-        while (timer > 0)
+        while (timer >= 0)
         {
             yield return new WaitForSeconds(1f);
             timer--;

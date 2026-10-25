@@ -644,6 +644,91 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &642905725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 642905727}
+  - component: {fileID: 642905726}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &642905726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642905725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75686dc8257edbd47bf423979ab1a2c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  sounds:
+  - name: Fight Background Theme
+    audioClip: {fileID: 8300000, guid: a7e165f815ad42f4c8bf18bb01cb1005, type: 3}
+    volume: 0.1
+    pitch: 1
+    audioSource: {fileID: 0}
+  - name: LaserSFX
+    audioClip: {fileID: 8300000, guid: fb4cf69267e71ad4783f8f49eddcaf21, type: 3}
+    volume: 0.35
+    pitch: 1
+    audioSource: {fileID: 0}
+  - name: MissileSFX
+    audioClip: {fileID: 8300000, guid: 358a12aff9407f14c88577cb5cf7bdd4, type: 3}
+    volume: 0.5
+    pitch: 1
+    audioSource: {fileID: 0}
+  - name: ShipHit
+    audioClip: {fileID: 8300000, guid: 0e898ecc975a7e5419db34ff6d8d9d63, type: 3}
+    volume: 0.65
+    pitch: 1
+    audioSource: {fileID: 0}
+  - name: ShieldHit
+    audioClip: {fileID: 8300000, guid: e60eb96842f742a44ae3b6bdddd0a351, type: 3}
+    volume: 0.7
+    pitch: 1
+    audioSource: {fileID: 0}
+  - name: PreRoundCountdown
+    audioClip: {fileID: 8300000, guid: 8211aa906a8075d4487b991ebd572e74, type: 3}
+    volume: 0.5
+    pitch: 1
+    audioSource: {fileID: 0}
+  - name: Last10Sec
+    audioClip: {fileID: 8300000, guid: b21e6d2b261fda845bb22a3d24b63470, type: 3}
+    volume: 0.35
+    pitch: 1
+    audioSource: {fileID: 0}
+  - name: ButtonClick
+    audioClip: {fileID: 8300000, guid: 3ebfde930832e214b969f333c502da0d, type: 3}
+    volume: 0.7
+    pitch: 1
+    audioSource: {fileID: 0}
+--- !u!4 &642905727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642905725}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &696010068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,4 +1608,5 @@ SceneRoots:
   - {fileID: 25876159}
   - {fileID: 331897904}
   - {fileID: 1235088285}
+  - {fileID: 642905727}
   - {fileID: 1934801685}
