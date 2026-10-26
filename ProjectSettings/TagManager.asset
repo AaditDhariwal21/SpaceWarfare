@@ -14,6 +14,8 @@ TagManager:
   - PlayerSetupController
   - Meteor
   - ClusterBomb
+  - SelectPanelP1
+  - SelectPanelP2
   layers:
   - Default
   - TransparentFX

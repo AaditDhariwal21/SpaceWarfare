@@ -20,6 +20,24 @@ public class ShipSelectPanel : MonoBehaviour
         ShowCurrentShip();
     }
 
+    void Update()
+    {
+        if (isReady) return;
+
+        if (playerIndex == 1)
+        {
+            if (Input.GetKeyDown(KeyCode.D)) OnNextPressed();
+            if (Input.GetKeyDown(KeyCode.A)) OnPrevPressed();
+            if (Input.GetKeyDown(KeyCode.W)) OnReady();
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.L)) OnNextPressed();
+            if (Input.GetKeyDown(KeyCode.J)) OnPrevPressed();
+            if (Input.GetKeyDown(KeyCode.I)) OnReady();
+        }
+    }
+
     void ShowCurrentShip()
     {
         shipImage.sprite = allShipData[currentIndex].playerSprite;
