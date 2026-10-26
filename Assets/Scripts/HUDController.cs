@@ -9,12 +9,14 @@ using UnityEngine.UI;
 public class HUDController : MonoBehaviour
 {
     [Header("Player 1 bars")]
+    [SerializeField] private HUDFader p1HUD;
     [SerializeField] private HealthBarUI p1HealthBar;
     [SerializeField] private FocusBarUI p1FocusBar;
     [SerializeField] private LaserAmmoHUD p1LaserAmmoHUD;
     [SerializeField] private MissileAmmoHUD p1MissileAmmoHUD;
 
     [Header("Player 2 bars")]
+    [SerializeField] private HUDFader p2HUD;
     [SerializeField] private HealthBarUI p2HealthBar;
     [SerializeField] private FocusBarUI p2FocusBar;
     [SerializeField] private LaserAmmoHUD p2LaserAmmoHUD;
@@ -47,11 +49,14 @@ public class HUDController : MonoBehaviour
     }
     public void BindPlayers(PlayerConfig player1, PlayerConfig player2)
     {
+
+        p1HUD.Bind(player1.GetComponent<SpriteRenderer>());
         p1HealthBar.Bind(player1);
         p1FocusBar.Bind(player1);
         p1LaserAmmoHUD.Bind(player1);
         p1MissileAmmoHUD.Bind(player1);
 
+        p2HUD.Bind(player2.GetComponent<SpriteRenderer>());
         p2HealthBar.Bind(player2);
         p2FocusBar.Bind(player2);
         p2LaserAmmoHUD.Bind(player2);

@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     }
     public void TryMatchStart()
     {
-        ShipSelectPanel[] panels = FindObjectsByType<ShipSelectPanel>(FindObjectsSortMode.None);
+        ShipSelectPanel[] panels = FindObjectsByType<ShipSelectPanel>();
         Array.Sort(panels, (a, b) => a.playerIndex.CompareTo(b.playerIndex));
 
         foreach (ShipSelectPanel panel in panels)
@@ -203,6 +203,7 @@ public class GameManager : MonoBehaviour
         else
         {
             hud.SetBtwRoundsPanel(true, roundWinnerPlayerConfig, p1Wins, p2Wins);
+            SetPlayerInput(false);
             StartCoroutine(LoadNextRound());
         }
     }
