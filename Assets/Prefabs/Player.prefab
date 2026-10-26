@@ -188,6 +188,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   speed: 7
+  minY: -4.5
+  maxY: 4.5
 --- !u!114 &7268302899149880335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,6 +222,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   currentHealth: 0
+  shipRenderer: {fileID: 6791950540983162568}
+  flashColor: {r: 0, g: 0, b: 0, a: 1}
+  flashCount: 3
+  flashInterval: 0.1
 --- !u!114 &8965647111081117158
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using TMPro;
+using Unity.VectorGraphics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour
@@ -98,7 +100,7 @@ public class HUDController : MonoBehaviour
         scoreText.text = "SCORE : " + p1Wins + " - " + p2Wins;
     }
 
-     public void SetBtwRoundsPanel(bool enabled)
+    public void SetBtwRoundsPanel(bool enabled)
     {
         btwRoundsPanel.SetActive(enabled);
     }
@@ -112,10 +114,16 @@ public class HUDController : MonoBehaviour
         
     }
 
-     public void SetMatchOverPanel(bool enabled)
+    public void SetMatchOverPanel(bool enabled)
     {
         matchOverPanel.SetActive(enabled);
     }
 
-
+    public void BackToMenuButtonClicked()
+    {
+        AudioManager.amInstance.Play("ButtonClick");
+        AudioManager.amInstance.Stop("FightTheme");
+        AudioManager.amInstance.PlayMusic("GameTheme");
+        SceneManager.LoadScene(0);
+    }
 }

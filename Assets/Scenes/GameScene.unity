@@ -2014,7 +2014,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 473090588098268350, guid: 3087d469365df634187bd03d8d35f6d9, type: 3}
       propertyPath: m_Name
-      value: PlayButton
+      value: BackToMenuButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536311387703342269, guid: 3087d469365df634187bd03d8d35f6d9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536311387703342269, guid: 3087d469365df634187bd03d8d35f6d9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536311387703342269, guid: 3087d469365df634187bd03d8d35f6d9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2000021850}
+    - target: {fileID: 2536311387703342269, guid: 3087d469365df634187bd03d8d35f6d9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536311387703342269, guid: 3087d469365df634187bd03d8d35f6d9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToMenuButtonClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536311387703342269, guid: 3087d469365df634187bd03d8d35f6d9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HUDController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536311387703342269, guid: 3087d469365df634187bd03d8d35f6d9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7469434573183942173, guid: 3087d469365df634187bd03d8d35f6d9, type: 3}
       propertyPath: m_text

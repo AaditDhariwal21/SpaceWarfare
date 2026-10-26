@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     private int roundTimer;
     private Coroutine timerCoroutine;
     private HUDController hud;
-    
     bool gamePaused = false;
 
     private void Awake()
@@ -34,6 +33,11 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }    
+    }
+
+    private void Start()
+    {
+        AudioManager.amInstance.PlayMusic("GameTheme");
     }
 
     void Update()
@@ -84,8 +88,9 @@ public class GameManager : MonoBehaviour
         roundNumber = 0;
 
         AudioManager.amInstance.Play("ButtonClick");
+        AudioManager.amInstance.Stop("GameTheme");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        AudioManager.amInstance.Play("Fight Background Theme");
+        AudioManager.amInstance.PlayMusic("FightTheme");
         StartCoroutine(PreRound());
     }
     public void RegisterHUD(HUDController newHud)
@@ -103,6 +108,9 @@ public class GameManager : MonoBehaviour
 
         yield return null;
         SetPlayerInput(false);
+
+        GameObject.FindGameObjectWithTag("Player1").GetComponent<SpriteRenderer>().color = Color.white;
+        GameObject.FindGameObjectWithTag("Player2").GetComponent<SpriteRenderer>().color = Color.white;
 
         Coroutine preroundTimerCoroutine = StartCoroutine(hud.RunPreroundTimer(3));
         AudioManager.amInstance.Play("PreRoundCountdown");    

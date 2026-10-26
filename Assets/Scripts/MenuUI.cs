@@ -15,4 +15,10 @@ public class MenuUI : MonoBehaviour
         SceneManager.LoadScene(3);
     }
 
+    public void CreditButtonClick()
+    {
+        AudioManager.amInstance.Play("ButtonClick");
+        SceneManager.LoadScene(4);
+    }
+
 }
