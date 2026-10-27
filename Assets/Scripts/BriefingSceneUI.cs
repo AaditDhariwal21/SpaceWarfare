@@ -1,12 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class BriefingSceneUI : MonoBehaviour
 {
     
+    [SerializeField] private GameObject intelButton;
     public GameObject intelPanel;
     public GameObject controlsPanel;
-
+    void Start()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(intelButton);
+    }
     public void OnDismissClick()
     {
         AudioManager.amInstance.Play("ButtonClick");
@@ -27,3 +33,4 @@ public class BriefingSceneUI : MonoBehaviour
         controlsPanel.SetActive(true);
     }
 }
+

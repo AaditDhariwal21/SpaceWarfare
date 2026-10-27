@@ -219,7 +219,8 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Player 2 Won.");
         }
-
+        
+        SetPlayerInput(false);
         hud.SetMatchOverPanel(true, matchWinnerPlayerConfig, p1Wins, p2Wins);
     }
 
